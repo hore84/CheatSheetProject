@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Cheat Sheet</title>
+        <link rel="stylesheet" href="./resources/css/styles.css">
+    </head>
+    
+    <body>
+        <!-- Page Banner -->
+        <div class="topBanner">
+            <p class="pageHeaderText">HTML & CSS Cheatsheet</p>
+            <p class="byLine">By <strong>Hector</strong> on March 6th</p>
+        </div>
+        
+        <h1 class="elementHeader">&lt;area&gt; - Image Map Area Element</h1>
+        <p class="elementDes">The &lt;area&gt; HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with hypertext links.</p>
+
+        <!-- Attributes section -->
+        <div>
+            <h2 class="sectionHeader">Attributes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="firstCol">alt</td>
+                        <td class="secondCol">Test String Alternative</td>
+                        <td>A text string alternative to display on browsers that do not display images. The text should be phrased so that it presents the user with the same kind of choice as the image would offer when displayed without the alternative text.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">coords</td>
+                        <td class="secondCol">Shape Coordinates</td>
+                        <td class="thirdCol"><span>The coords attribute details the coordinates of the shape attribute in size, shape, and placement of an &lt;area&gt;. This attribute must not be used if shape is set to default.</span>
+                            <ul>
+                                <li>rect: the value is x1,y1,x2,y2. The value specifies the coordinates of the top-left and bottom-right corner of the rectangle. For example, in &lt;area shape="rect" coords="0,0,253,27" href="#" target="_blank" alt="Mozilla"&gt; the coordinates are 0,0 and 253,27, indicating the top-left and bottom-right corners of the rectangle, respectively.</li>
+                            </ul>
+                            <ul>
+                                <li>circle: the value is x,y,radius. Value specifies the coordinates of the circle center and the radius. For example: &lt;area shape="circle" coords="130,136,60" href="#" target="_blank" alt="MDN"&gt;</li>
+                            </ul>
+                            <ul>
+                                <li>poly: the value is x1,y1,x2,y2,..,xn,yn. Value specifies the coordinates of the edges of the polygon. If the first and last coordinate pairs are not the same, the browser will add the last coordinate pair to close the polygon</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">download</td>
+                        <td class="secondCol">Resource Download</td>
+                        <td class="thirdCol">This attribute, if present, indicates that the author intends the hyperlink to be used for downloading a resource.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">href</td>
+                        <td class="secondCol">Hyperlink Target</td>
+                        <td class="thirdCol">The hyperlink target for the area. Its value is a valid URL. This attribute may be omitted; if so, the &lt;area&gt; element does not represent a hyperlink.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">ping</td>
+                        <td class="secondCol">List of URLs</td>
+                        <td class="thirdCol">Contains a space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be sent by the browser (in the background). Typically used for tracking.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">referrerpolicy</td>
+                        <td class="secondCol">Reference ID</td> 
+                        <td class="thirdCol"><span>A string indicating which referrer to use when fetching the resource</span>
+                            <ul>
+                                <li>no-referrer: The Referer header will not be sent.</li>
+                                <li>no-referrer-when-downgrade: The Referer header will not be sent to origins without TLS (HTTPS).</li>
+                                <li>origin: The sent referrer will be limited to the origin of the referring page: its scheme, host, and port.</li>
+                                <li>origin-when-cross-origin: The referrer sent to other origins will be limited to the scheme, the host, and the port. Navigations on the same origin will still include the path.</li>
+                                <li>same-origin: A referrer will be sent for same origin, but cross-origin requests will contain no referrer information.</li>
+                                <li>strict-origin: Only send the origin of the document as the referrer when the protocol security level stays the same (HTTPS→HTTPS), but don't send it to a less secure destination (HTTPS→HTTP).</li>
+                                <li>strict-origin-when-cross-origin (default): Send a full URL when performing a same-origin request, only send the origin when the protocol security level stays the same (HTTPS→HTTPS), and send no header to a less secure destination (HTTPS→HTTP).</li>
+                                <li>unsafe-url: The referrer will include the origin and the path (but not the fragment, password, or username). This value is unsafe, because it leaks origins and paths from TLS-protected resources to insecure origins.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="firstCol">rel</td>
+                        <td class="secondCol">Target Relationship</td>
+                        <td class="thirdCol">For anchors containing the href attribute, this attribute specifies the relationship of the target object to the link object. The value is a space-separated list of link types. The values and their semantics will be registered by some authority that might have meaning to the document author. The default relationship, if no other is given, is void. Use this attribute only if the href attribute is present.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">shape</td>
+                        <td class="secondCol">Hot Spot Shape</td>
+                        <td class="thirdCol">The shape of the associated hot spot. The specifications for HTML defines the values rect, which defines a rectangular region; circle, which defines a circular region; poly, which defines a polygon; and default, which indicates the entire region beyond any defined shapes.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">target</td>
+                        <td class="secondCol">Browsing Context</td>
+                        <td class="thirdCol"><span>A keyword or author-defined name of the browsing context to display the linked resource. The following keywords have special meanings</span>
+                            <ul>
+                                <li>_self (default): Show the resource in the current browsing context.</li>
+                                <li>_blank: Show the resource in a new, unnamed browsing context.</li>
+                                <li>_parent: Show the resource in the parent browsing context of the current one, if the current page is inside a frame. If there is no parent, acts the same as _self.</li>
+                                <li>_top: Show the resource in the topmost browsing context (the browsing context that is an ancestor of the current one and has no parent). If there is no parent, acts the same as _self.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Technical summary section -->
+        <div>
+            <h2 class="sectionHeader">Technical Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="firstCol">Content Categories</td>
+                        <td>Flow Content, phrasing content</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">Permitted Content</td>
+                        <td>None; it is a void element</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="firstCol">Tag Omission</td>
+                        <td>Must have a start tag and must not have an end tag</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">Permitted Parents</td>
+                        <td>Any element that accepts phrasing content. The &lt;area&gt; element must have an ancestor &lt;map&gt;, but it need not be a direct parent.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">Implicit ARIA Role</td>
+                        <td>link when href attribute is present, otherwise generic</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">Permitted ARIA Roles</td>
+                        <td>No role permitted</td>
+                    </tr>
+
+                    <tr>
+                        <td class="firstCol">DOM Interface</td>
+                        <td>HTML AreaElent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
